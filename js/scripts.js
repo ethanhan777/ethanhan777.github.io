@@ -3,12 +3,9 @@
   'use strict'
 
     // form validations
-    $('form.needs-validation').submit(function(event) {
+    $('button.submit').click(function(event) {
       event.preventDefault()
       event.stopPropagation()
-      validation($(this));
-    });
-    $('button.validate').click(function(event) {
       validation($("#html5-form"));
     });
 
