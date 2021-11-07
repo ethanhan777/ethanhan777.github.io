@@ -30,4 +30,34 @@
       form.removeClass('needs-validation');
       form.addClass('was-validated');
     }
+
+    $('.geolocation a').on('click', function(){
+      if (Modernizr.geolocation) {
+        $('.geolocation .message').text('Geolocation API is supported for yoru browser! (details below in 5 seconds)');
+        // supported
+        var options = {
+          enableHighAccuracy: true,
+          timeout: 5000,
+          maximumAge: 0
+        };
+        
+        function success(pos) {
+          var crd = pos.coords;
+  
+          $('.geolocation .latitude').text(`Latitude : ${crd.latitude}`);
+          $('.geolocation .longitude').text(`Longitude: ${crd.longitude}`);
+          $('.geolocation .accuracy').text(`Accuracy: More or less ${crd.accuracy} meters.`);
+        }
+        
+        function error(err) {
+          console.warn(`ERROR(${err.code}): ${err.message}`);
+        }
+        
+        navigator.geolocation.getCurrentPosition(success, error, options);
+      } else {
+        // not-supported
+        $('.geolocation .message').text('Geolocation API is not supported for your browser!');
+      }
+    });
+
 })()

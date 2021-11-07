@@ -29,6 +29,22 @@
     <h1 class="text-center">UofT SCS 2679-031 Assignment 1</h1>
     <p class="text-center fs-2 fw-lighter">Ethan Han</p>
 
+    <section class="mb-5 media-query-indicator">
+      <h2>Media query indicator</h2>
+      <p class="deck xsmall-screen">portrait phones</p>
+      <p class="deck small-screen">landscape phones, 576px and up</p>
+      <p class="deck medium-screen">tablets, 768px and up</p>
+      <p class="deck large-screen">desktops, 992px and up</p>
+    </section>
+
+    <section class="mb-5 geolocation">
+      <h2>Geo location - Your current position is:</h2>
+      <a class="btn btn-primary">Get your current position</a>
+      <p class="message"></p>
+      <p class="deck latitude"></p>
+      <p class="deck longitude"></p>
+      <p class="deck accuracy"></p>
+    </section>
   
     <section class="mb-5">
       <h2 class="mb-4">Task 1-1: Background story</h2>
@@ -41,6 +57,7 @@
 
     <section class="mb-5">
       <h2 class="mb-4">Task 1-2: HTML5-validated form</h2>
+
       <form id="html5-form" class="g-3 needs-validation" novalidate>
 
         <div class="row">
@@ -158,6 +175,8 @@
   src="https://code.jquery.com/jquery-3.6.0.slim.min.js" 
   integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" 
   crossorigin="anonymous"></script>
+  <script src="js/prefixfree.min.js"></script>
+  <script src="js/modernizr-custom.js"></script>
   <script src="js/scripts.js"></script>
 </body>
 </html>

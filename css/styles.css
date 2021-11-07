@@ -1,3 +1,38 @@
 .form-check .form-check-label {
   cursor: pointer;
 }
+
+.media-query-indicator .deck {
+  display: none;
+  font-size: 50px;
+  color: gray;
+}
+
+/* Media queries */
+/* Small devices (portrait phones, 576px less) */
+@media (max-width: 575px) {
+  .media-query-indicator .deck.xsmall-screen {
+    display: block;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .media-query-indicator .deck.small-screen {
+    display: block;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .media-query-indicator .deck.medium-screen {
+    display: block;
+  }
+}
+
+/* Medium devices (desktop, 992px and up) */
+@media (min-width: 992px) {
+  .media-query-indicator .deck.large-screen {
+    display: block;
+  }
+}
