@@ -81,7 +81,7 @@
 
     // We get the initial value when the promise resolves ...
     navigator.getBattery().then(function(battery) {
-      $('.apis p').text(battery.level);
+      $('.apis p').text('Your bettary level is: ' + battery.level * 100 + '%');
     });
 
 })()
