@@ -31,7 +31,7 @@
       form.addClass('was-validated');
     }
 
-    $('.geolocation a').on('click', function(){
+    $('.geolocation a.getmap').on('click', function(){
       if (Modernizr.geolocation) {
         $('.geolocation .message').text('Geolocation API is supported for yoru browser! (details below in 5 seconds)');
         // supported
@@ -80,8 +80,22 @@
 
 
     // We get the initial value when the promise resolves ...
-    navigator.getBattery().then(function(battery) {
-      $('.apis p').text('Your bettary level is: ' + battery.level * 100 + '%');
+    var battery = navigator.battery || navigator.webkitBattery || navigator.mozBattery;
+
+    function logBattery(battery) {
+      $('.apis p span').text(battery.level * 100 + '%');
+    }
+
+    if (navigator.getBattery) {
+      navigator.getBattery().then(logBattery);
+    } else if (battery) {
+      logBattery(battery);
+    }
+
+
+    $('.apis a.vibrate').on('click', function(){
+      // vibrate for 2 seconds
+      navigator.vibrate(2000);
     });
 
 })()

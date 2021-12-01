@@ -31,7 +31,7 @@
 
     <section class="mb-5 map">
       <h2>Task 3-1: Using Geolocation and Maps</h2>
-      <a class="btn btn-primary">Get your current position</a>
+      <a class="btn btn-primary getmap">Get your current position</a>
       <p class="message"></p>
       <p class="deck latitude"></p>
       <p class="deck longitude"></p>
@@ -54,13 +54,17 @@
       <p>Swipe: will change the background colour.</p>
       <p>Tab: will change the font colour.</p>
       <div id="myElement">
-        <p></p>
+        <p>Please swipe or tab.</p>
       </div>
     </section>
 
     <section class="mb-5 apis">
       <h2>Task 3-3: Implementing Device Interaction API</h2>
-      <p></p>
+      <h3>Battery API</h3>
+      <p>Your bettary level is: <span></span></p>
+
+      <h3>Vibration API</h3>
+      <a class="btn btn-primary vibrate">vibrate for 2 seconds</a>
     </section>
 
     <section class="mb-5 media-query-indicator">
@@ -212,6 +216,6 @@
   <script src="js/prefixfree.min.js"></script>
   <script src="js/modernizr-custom.js"></script>
   <script src="js/hammer.min.js"></script>
-  <script src="js/scripts.js"></script>
+  <script src="js/scripts.min.js"></script>
 </body>
 </html>
