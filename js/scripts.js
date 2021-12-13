@@ -78,6 +78,44 @@
       }
     });
 
+    var mcNav = new Hammer(document.getElementById('hammerNav'));
+
+    // listen to events...
+    mcNav.on('swipe', function(ev) {
+      // left
+      if (ev.direction === 2) {
+        $('.step').each(function( index ) {
+          if ($(this).hasClass('active') && index != 0) {
+            $(this).prev().addClass('active');
+            $(this).removeClass('active');
+            if ($('.alert').hasClass('show')) {
+              $('.alert').removeClass('show');
+            }
+            return false;
+          } else if ($(this).hasClass('active') && index == 0) {
+            $('.alert p').text('Feature 10: This is the first section.');
+            $('.alert').addClass('show');
+          }
+        });
+      // right
+      } else {
+        $('.step').each(function( index ) {
+          if ($(this).hasClass('active') && index != $('.step').length -1) {
+            $(this).next().addClass('active');
+            $(this).removeClass('active');
+            if ($('.alert').hasClass('show')) {
+              $('.alert').removeClass('show');
+            }
+            return false;
+          } else if ($(this).hasClass('active') && index == $('.step').length -1) {
+            //alert
+            $('.alert p').text('Feature 10: This is the last section.');
+            $('.alert').addClass('show');
+          }
+        });
+      }
+    });
+
 
     // We get the initial value when the promise resolves ...
     var battery = navigator.battery || navigator.webkitBattery || navigator.mozBattery;
@@ -91,7 +129,6 @@
     } else if (battery) {
       logBattery(battery);
     }
-
 
     $('.apis a.vibrate').on('click', function(){
       // vibrate for 2 seconds

@@ -15,195 +15,242 @@
   <meta property="og:description" content="UofT SCS 2679-031 projects.">
   <meta property="og:image" content="">
 
-  <link rel="stylesheet" href="css/styles.css">
   <link 
   href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" 
   rel="stylesheet" 
   integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" 
   crossorigin="anonymous">
+  <link
+  rel="stylesheet"
+  href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="css/styles.css">
 
 </head>
 
 <body>
   <div class="content container">
-    <h1 class="text-center">UofT SCS 2679-031 Assignment 1</h1>
-    <p class="text-center fs-2 fw-lighter">Ethan Han</p>
+    <header>
+      <h1 class="text-center">UofT SCS 2679-031 Assignment 1</h1>
+      <p class="text-center fs-2 fw-lighter">Ethan Han</p>
+    </header>
+    
+    <div id="hammerNav" class="mb-5">
+      <i class="fas fa-chevron-left"></i><p>Feature 9: Please swipe left or right to navigate</p><i class="fas fa-chevron-right"></i>
+    </div>
 
-    <section class="mb-5 map">
-      <h2>Task 3-1: Using Geolocation and Maps</h2>
-      <a class="btn btn-primary getmap">Get your current position</a>
-      <p class="message"></p>
-      <p class="deck latitude"></p>
-      <p class="deck longitude"></p>
-      <p class="deck accuracy"></p>
-      <div class="gmap_canvas">
-        <iframe 
-        width="100%" 
-        height="500" 
-        id="gmap_canvas" 
-        src="" 
-        frameborder="0" 
-        scrolling="no" 
-        marginheight="0" 
-        marginwidth="0"></iframe>
+    <div class="alert alert-warning alert-dismissible fade" role="alert">
+      <p></p>
+    </div>
+
+      <div class="step-wrapper">
+        <!-- Background story -->
+        <div class="step active">
+          <section class="mb-5">
+            <h2 class="mb-4">Background story</h2>
+            <p>Teemo is a humanoid robot that has the ability to recognize moving objects, postures, gestures, its surrounding environment, sounds and faces, which enables it to interact with humans for helping mental health issues.</p>
+      
+            <p>Teemo can detect the movements of multiple objects by using visual information captured by cameras in its head and also determine distance and direction. This feature allows Teemo to follow or face a person when approached.</p>
+              
+            <p>Teemo interprets voice commands and human gestures, enabling it to recognize when a handshake is offered or when a person waves or points, and then responds accordingly. Teemo’s ability to distinguish between voices and other sounds allows it to identify its companions. Teemo is able to respond to its name and recognizes sounds associated with a falling object or collision.</p>
+
+            <p>These features allow Teemo to support any medical needs for people who require it. For example, reminding the time for their medications, fall detection to call an emergency, and connecting to doctors virtually for their regular checkups through teemo’s screen on its chest.</p>
+
+            <p>References:</p>
+            <ul>
+              <li>Asfour, T., Bern, K., Dillman, R., 2000. “The Humanoid Robot ARMAR III: Design and Control,” The First IEEE-RAS Int. Conf. on Humanoid Robots (HUMANOIDS 2000). MIT, USA. <a href="https://scholar.google.com/scholar?q=Asfour,%20T.,%20Bern,%20K.,%20Dillman,%20R.,%202000.%20The%20Humanoid%20Robot%20ARMAR%20III:%20Design%20and%20Control,%20The%20First%20IEEE-RAS%20Int.%20Conf.%20on%20Humanoid%20Robots%20.%20MIT,%20USA." target="_blank">Google Scholar</a></li>
+              <li>Kose, S., 2007. “Housing Elderly People in Japan,” Angeing International. <a href="https://scholar.google.com/scholar?q=Kose,%20S.,%202007.%20Housing%20Elderly%20People%20in%20Japan,%20Angeing%20International,%20pp.%20148." target="_blank">Google Scholar</a></li>
+            </ul>
+          </section>
+        </div>
+
+        <!-- Geolocation and Maps -->
+        <div class="step">
+          <section class="mb-5 map">
+            <h2>Feature 1: Using Geolocation and Maps</h2>
+            <a class="btn btn-primary getmap">Get your current position</a>
+            <p class="message"></p>
+            <p class="deck latitude"></p>
+            <p class="deck longitude"></p>
+            <p class="deck accuracy"></p>
+            <div class="gmap_canvas">
+              <iframe 
+              width="100%" 
+              height="500" 
+              id="gmap_canvas" 
+              src="" 
+              frameborder="0" 
+              scrolling="no" 
+              marginheight="0" 
+              marginwidth="0"></iframe>
+            </div>
+          </section>
+        </div>
+
+        <!-- Hammer.js -->
+        <div class="step">
+          <section class="mb-5 hammer">
+            <h2>Feature 2: Implementing Gestures with Hammer.js</h2>
+            <p>Swipe: will change the background colour.</p>
+            <p>Tab: will change the font colour.</p>
+            <div id="myElement">
+              <p>Please swipe or tab.</p>
+            </div>
+          </section>
+        </div>
+    
+        <!-- Device Interaction API -->
+        <div class="step">
+          <section class="mb-5 apis">
+            <h2>Implementing Device Interaction API</h2>
+            <h3>Feature 3: Battery API</h3>
+            <p>Your bettary level is: <span></span></p>
+      
+            <h3>Feature 4: Vibration API</h3>
+            <a class="btn btn-primary vibrate">vibrate for 2 seconds</a>
+          </section>
+        </div>
+    
+        <!-- Media query indicator -->
+        <div class="step">
+          <section class="mb-5 media-query-indicator">
+            <h2>Feature 5: Media query indicator</h2>
+            <p class="deck xsmall-screen">portrait phones</p>
+            <p class="deck small-screen">landscape phones, 576px and up</p>
+            <p class="deck medium-screen">tablets, 768px and up</p>
+            <p class="deck large-screen">desktops, 992px and up</p>
+          </section>
+        </div>
+    
+        <!-- Geo location -->
+        <div class="step">
+          <section class="mb-5 geolocation">
+            <h2>Feature 6: Geo location - Your current position is:</h2>
+            <a class="btn btn-primary">Get your current position</a>
+            <p class="message"></p>
+            <p class="deck latitude"></p>
+            <p class="deck longitude"></p>
+            <p class="deck accuracy"></p>
+          </section>
+        </div>
+    
+        <!-- HTML5-validated form -->
+        <div class="step">
+          <section class="mb-5">
+            <h2 class="mb-4">Feature 7: HTML5-validated form</h2>
+      
+            <form id="html5-form" class="g-3 needs-validation" novalidate>
+      
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-floating">
+                    <input type="email" class="form-control" id="email" placeholder="name@example.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                    <label for="email">Email address</label>
+                    <div class="invalid-feedback">
+                      Please enter a valid email address.
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="col-md-6 mb-4">
+                  <div class="form-floating">
+                    <input type="url" class="form-control" id="url" placeholder="https://your-website.com" pattern="http(s?)(:\/\/)((www.)?).*" required>
+                    <label for="url">Personal URL</label>
+                    <div class="invalid-feedback">
+                      Please enter a valid website url. eg)https://theverge.com
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="form-floating mb-4">
+                <textarea class="form-control" placeholder="Leave a comment here" id="commments" style="height: 100px"></textarea>
+                <label for="commments">Comments</label>
+              </div>
+      
+              <div class="form-floating mb-4">
+                <input class="form-control" type="date" id="birthday" name="trip-start" value="" min="1900-01-01" max="2021-12-31" required>
+                <label for="birthday">Birthday</label>
+              </div>
+      
+              <fieldset class="mb-4">
+                <legend class="col-form-label pt-0">Gender</legend>
+                <div class="row">
+                  <div class="col-md-2 mb-sm-2 mb-md-0">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="genderOptions" id="gender1" value="Female" required>
+                      <label class="form-check-label" for="gender1">Female</label>
+                    </div>
+                  </div>
+                  <div class="col-md-2 mb-sm-2 mb-md-0">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="genderOptions" id="gender2" value="Male" required>
+                      <label class="form-check-label" for="gender2">Male</label>
+                    </div>
+                  </div>
+                  <div class="col-md-2 mb-sm-2 mb-md-0">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="genderOptions" id="gender3" value="Transgender" required>
+                      <label class="form-check-label" for="gender3">Transgender</label>
+                    </div>
+                  </div>
+                  <div class="col-md-2 mb-sm-2 mb-md-0">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="genderOptions" id="gender4" value="Intersex" required>
+                      <label class="form-check-label" for="gender4">Intersex</label>
+                    </div>
+                  </div>
+                  <div class="col-md-2 mb-sm-2 mb-md-0">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="genderOptions" id="gender5" value="Let me type" required>
+                      <label class="form-check-label" for="gender5">Let me type</label>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="genderOptions" id="gender6" value="Prefer not to say" required>
+                      <label class="form-check-label" for="gender6">Prefer not to say</label>
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="form-floating mt-4 d-none gender-identity">
+                  <input type="text" class="form-control" id="genderIdentity">
+                  <label for="genderOptionOther">Gender identity</label>
+                </div>
+              </fieldset>
+      
+              <div class="form-check mb-4">
+                <input class="form-check-input" type="checkbox" value="" id="consent" required>
+                <label class="form-check-label" for="consent">
+                  I confirm that the data entered are fictitious.
+                </label>
+              </div>
+      
+              <div class="mb-3">
+                <button class="btn btn-danger reset" type="button">Reset</button>
+                <button class="btn btn-primary submit" type="submit">Submit</button>
+              </div>
+            </form>
+          </section>
+        </div>
+    
+        <!-- QR code for Android native app -->
+        <div class="step">
+          <section class="mb-5">
+            <h2 class="mb-4">Feature 8: QR code for Android native app</h2>
+      
+            <div class="card" style="width: 18rem;">
+              <img src="./assets/frame.png" class="card-img-top" alt="Andorid app qr code">
+              <div class="card-body">
+                <p class="card-text">QR code to download the Android native app.</p>
+                <p class="card-text">If the QR code doesn't work, please click on the button below to download the app.</p>
+                <a href="https://ethanhan777.github.io/assets/app-release.apk" class="btn btn-primary">Download APK</a>
+              </div>
+            </div>
+          </section>
+        </div>
       </div>
-    </section>
-
-    <section class="mb-5 hammer">
-      <h2>Task 3-2: Implementing Gestures with Hammer.js</h2>
-      <p>Swipe: will change the background colour.</p>
-      <p>Tab: will change the font colour.</p>
-      <div id="myElement">
-        <p>Please swipe or tab.</p>
-      </div>
-    </section>
-
-    <section class="mb-5 apis">
-      <h2>Task 3-3: Implementing Device Interaction API</h2>
-      <h3>Battery API</h3>
-      <p>Your bettary level is: <span></span></p>
-
-      <h3>Vibration API</h3>
-      <a class="btn btn-primary vibrate">vibrate for 2 seconds</a>
-    </section>
-
-    <section class="mb-5 media-query-indicator">
-      <h2>Media query indicator</h2>
-      <p class="deck xsmall-screen">portrait phones</p>
-      <p class="deck small-screen">landscape phones, 576px and up</p>
-      <p class="deck medium-screen">tablets, 768px and up</p>
-      <p class="deck large-screen">desktops, 992px and up</p>
-    </section>
-
-    <section class="mb-5 geolocation">
-      <h2>Geo location - Your current position is:</h2>
-      <a class="btn btn-primary">Get your current position</a>
-      <p class="message"></p>
-      <p class="deck latitude"></p>
-      <p class="deck longitude"></p>
-      <p class="deck accuracy"></p>
-    </section>
-  
-    <section class="mb-5">
-      <h2 class="mb-4">Task 1-1: Background story</h2>
-      <p>Teemo is a humanoid robot that has the ability to recognize moving objects, postures, gestures, its surrounding environment, sounds and faces, which enables it to interact with humans for helping mental health issues.</p>
-
-      <p>Teemo can detect the movements of multiple objects by using visual information captured by cameras in its head and also determine distance and direction. This feature allows Teemo to follow or face a person when approached.</p>
-        
-      <p>Teemo interprets voice commands and human gestures, enabling it to recognize when a handshake is offered or when a person waves or points, and then respond accordingly. Teemo’s ability to distinguish between voices and other sounds allows it to identify its companions. Teemo is able to respond to its name and recognizes sounds associated with a falling object or collision. This allows Teemo to face a person when spoken to or look towards a sound. Teemo responds to questions by nodding or providing a verbal answer in different languages and can recognize approximately 10 different faces and address them by name.</p>
-    </section>
-
-    <section class="mb-5">
-      <h2 class="mb-4">Task 1-2: HTML5-validated form</h2>
-
-      <form id="html5-form" class="g-3 needs-validation" novalidate>
-
-        <div class="row">
-          <div class="col-md-6 mb-4">
-            <div class="form-floating">
-              <input type="email" class="form-control" id="email" placeholder="name@example.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
-              <label for="email">Email address</label>
-              <div class="invalid-feedback">
-                Please enter a valid email address.
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 mb-4">
-            <div class="form-floating">
-              <input type="url" class="form-control" id="url" placeholder="https://your-website.com" pattern="http(s?)(:\/\/)((www.)?).*" required>
-              <label for="url">Personal URL</label>
-              <div class="invalid-feedback">
-                Please enter a valid website url. eg)https://theverge.com
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="form-floating mb-4">
-          <textarea class="form-control" placeholder="Leave a comment here" id="commments" style="height: 100px"></textarea>
-          <label for="commments">Comments</label>
-        </div>
-
-        <div class="form-floating mb-4">
-          <input class="form-control" type="date" id="birthday" name="trip-start" value="" min="1900-01-01" max="2021-12-31" required>
-          <label for="birthday">Birthday</label>
-        </div>
-
-        <fieldset class="mb-4">
-          <legend class="col-form-label pt-0">Gender</legend>
-          <div class="row">
-            <div class="col-md-2 mb-sm-2 mb-md-0">
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="genderOptions" id="gender1" value="Female" required>
-                <label class="form-check-label" for="gender1">Female</label>
-              </div>
-            </div>
-            <div class="col-md-2 mb-sm-2 mb-md-0">
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="genderOptions" id="gender2" value="Male" required>
-                <label class="form-check-label" for="gender2">Male</label>
-              </div>
-            </div>
-            <div class="col-md-2 mb-sm-2 mb-md-0">
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="genderOptions" id="gender3" value="Transgender" required>
-                <label class="form-check-label" for="gender3">Transgender</label>
-              </div>
-            </div>
-            <div class="col-md-2 mb-sm-2 mb-md-0">
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="genderOptions" id="gender4" value="Intersex" required>
-                <label class="form-check-label" for="gender4">Intersex</label>
-              </div>
-            </div>
-            <div class="col-md-2 mb-sm-2 mb-md-0">
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="genderOptions" id="gender5" value="Let me type" required>
-                <label class="form-check-label" for="gender5">Let me type</label>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="genderOptions" id="gender6" value="Prefer not to say" required>
-                <label class="form-check-label" for="gender6">Prefer not to say</label>
-              </div>
-            </div>
-          </div>
-
-          <div class="form-floating mt-4 d-none gender-identity">
-            <input type="text" class="form-control" id="genderIdentity">
-            <label for="genderOptionOther">Gender identity</label>
-          </div>
-        </fieldset>
-
-        <div class="form-check mb-4">
-          <input class="form-check-input" type="checkbox" value="" id="consent" required>
-          <label class="form-check-label" for="consent">
-            I confirm that the data entered are fictitious.
-          </label>
-        </div>
-
-        <div class="mb-3">
-          <button class="btn btn-danger reset" type="button">Reset</button>
-          <button class="btn btn-primary submit" type="submit">Submit</button>
-        </div>
-      </form>
-    </section>
-
-    <section class="mb-5">
-      <h2 class="mb-4">Task 1-3: QR code for Android native app</h2>
-
-      <div class="card" style="width: 18rem;">
-        <img src="./assets/frame.png" class="card-img-top" alt="Andorid app qr code">
-        <div class="card-body">
-          <p class="card-text">QR code to download the Android native app.</p>
-          <p class="card-text">If the QR code doesn't work, please click on the button below to download the app.</p>
-          <a href="https://ethanhan777.github.io/assets/app-release.apk" class="btn btn-primary">Download APK</a>
-        </div>
-      </div>
-    </section>
-  </div>
+    </div>
 
   <script 
   src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" 
@@ -216,6 +263,8 @@
   <script src="js/prefixfree.min.js"></script>
   <script src="js/modernizr-custom.js"></script>
   <script src="js/hammer.min.js"></script>
-  <script src="js/scripts.min.js"></script>
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/3948006b0e.js" crossorigin="anonymous"></script>
+  <script src="js/scripts.js"></script>
 </body>
 </html>
